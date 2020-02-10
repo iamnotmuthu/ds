@@ -18,7 +18,16 @@ package org.learning.tree.util;
  *                         1      5   10
  *                        /
  *                       0
- *                          \9
+ *                        \
+ *                         9
+ *                          \
+ *                           7
+ *                          /
+ *                         0
+ *                          
+ *                          
+ *                          
+ *                          
  * 
  *
  */
@@ -43,7 +52,12 @@ public class Tree {
 		
 		Node<Integer> two=three.left;
 		two.left=new Node<Integer>(1);
-		two.left.left=new Node<Integer>(0);
+		Node<Integer> zero=new Node<Integer>(0);
+		two.left.left=zero;
+		
+		zero.right=new Node(9);
+		zero.right.right=new Node(7);
+		zero.right.right.left=new Node(0);
 		
 		
 		
