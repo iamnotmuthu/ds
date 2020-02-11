@@ -1,4 +1,4 @@
-package org.learning.structure;
+package org.learning.tree.count;
 
 import java.util.LinkedList;
 import java.util.Queue;

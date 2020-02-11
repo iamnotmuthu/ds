@@ -1,4 +1,4 @@
-package org.learning.structure;
+package org.learning.tree.count;
 
 import org.learning.tree.util.Node;
 import org.learning.tree.util.Tree;
