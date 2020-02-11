@@ -2,6 +2,10 @@ package org.learning.tree.util;
 
 public class Node<T> {
 
+	@Override
+	public String toString() {
+		return "Node [data=" + data + "]";
+	}
 	public Node<T> left;
 	public Node<T> right;
 	public T data;
