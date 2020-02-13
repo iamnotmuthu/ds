@@ -13,25 +13,25 @@ public class PostOrderIterate {
 	}
 
 	private static void postOrder(Node<Integer> root) {
-
-		if (root == null) {
+		if (root == null)
 			return;
-		}
-		Stack<Node> s1=new Stack();
-		Stack<Node> s2=new Stack();
-		
-		s1.add(root);
-		
-		while(!s1.isEmpty()) {
-			root=s1.pop();
-			if(root.left!=null) {
-				s1.add(root.left);
+		Stack<Node> s = new Stack();
+		while (!s.isEmpty() || root != null) {
+			if (root != null) {
+				s.add(root);
+				root = root.left;
+			} else {
+				root = s.peek().right;
+				if (root == null) {
+					Node temp = s.pop();
+					System.out.println(temp.data);
+					while (!s.isEmpty() && temp == s.peek().right) {
+						temp = s.pop();
+						System.out.println(temp.data);
+					}
+				}
 			}
-			if(root.right!=null) {
-				s1.add(root.right);
-			}
 		}
-			
-	}
 
+	}
 }
