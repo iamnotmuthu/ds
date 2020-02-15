@@ -23,7 +23,7 @@ package org.learning.tree.util;
  *                          \
  *                           7
  *                          /
- *                         0
+ *                         20
  *                          
  *                          
  *                          
@@ -57,7 +57,7 @@ public class Tree {
 		
 		zero.right=new Node(9);
 		zero.right.right=new Node(7);
-		zero.right.right.left=new Node(0);
+		zero.right.right.left=new Node(20);
 		
 		
 		

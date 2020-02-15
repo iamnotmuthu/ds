@@ -7,7 +7,7 @@ public class LowestcommonAncestor {
 
 	public static void main(String[] args) {
 		Node<Integer> root = Tree.getTree();
-		System.out.println(lca(root,7,5));
+		System.out.println(lca(root,3,2));
 
 	}
 
