@@ -9,21 +9,15 @@ package org.learning.tree.util;
  * @author Muthu
  * 
  * 
- *                               6
+ *                               1
  *                              / \
- *                             3   8
+ *                             2   3
  *                            / \  /\
- *                           2  4 7 9
- *                          /    \   \
- *                         1      5   10
- *                        /
- *                       0
- *                        \
- *                         9
- *                          \
- *                           7
- *                          /
- *                         20
+ *                           4  5 6 7
+ *                          /        \
+ *                         8          9
+ *                         
+ *                       
  *                          
  *                          
  *                          
@@ -36,32 +30,32 @@ package org.learning.tree.util;
 public class Tree {
 
 	public static Node<Integer> getTree() {
-		Node<Integer> root=new Node<>(6);
-		root.left=new Node<Integer>(3);
-		root.right=new Node<Integer>(8);
+		Node<Integer> one=new Node<>(1);
+		Node<Integer> two=new Node(2);
+		Node<Integer> three=new Node(3);
+		Node<Integer> four=new Node<>(4);
+		Node<Integer> five=new Node(5);
+		Node<Integer> six=new Node(6);
+		Node<Integer> seven=new Node<>(7);
+		Node<Integer> eight=new Node(8);
+		Node<Integer> nine=new Node(9);
 		
-		Node<Integer> three=root.left;
-		three.left=new Node<Integer>(2);
-		three.right=new Node<Integer>(4);
-		three.right.right=new Node<Integer>(5);
+	
 		
-		Node<Integer> eight=root.right;
-		eight.left=new Node<Integer>(7);
-		eight.right=new Node<Integer>(9);
-		eight.right.right=new Node<Integer>(10);
+		four.left=eight;
+		seven.right=nine;
 		
-		Node<Integer> two=three.left;
-		two.left=new Node<Integer>(1);
-		Node<Integer> zero=new Node<Integer>(0);
-		two.left.left=zero;
-		
-		zero.right=new Node(9);
-		zero.right.right=new Node(7);
-		zero.right.right.left=new Node(20);
-		
+		three.left=six;
+		three.right=seven;
+		two.left=four;
+		two.right=five;
+		one.left=two;
+		one.right=three;
 		
 		
-		return root;
+		
+		
+		return one;
 		
 	}
 	
