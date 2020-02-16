@@ -6,7 +6,7 @@ import org.learning.tree.util.Tree;
 public class BST {
 
 	public static void main(String[] args) {
-		Node<Integer> root = Tree.getTree();
+		Node<Integer> root = Tree.getBST();
 		System.out.println(isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 
 	}
