@@ -6,29 +6,40 @@ import org.learning.tree.util.Tree;
 public class Sibling {
 
 	public static void main(String[] args) {
-		Node<Integer> root = Tree.getTree();
-		System.out.println(getSibling(root,4));
-		
+		Node root = Tree.getTree();
+		System.out.println(getSibling(root, 3));
+
 	}
 
+	/**
+	 * 6 / \ 3 8 / \ 2 4 \ 5
+	 * 
+	 * @param root
+	 * @param i
+	 * @return
+	 */
 	private static Node getSibling(Node<Integer> root, Integer i) {
-		if(root==null)
+		if (root == null)
 			return null;
-		
-		if(root.data.equals(i)) {
+
+		if (root.data.equals(i)) {
 			return root;
 		}
-		if(root.left!=null && root.left.data.equals(i))
+		/*
+		 * if(root.left!=null && root.left.data.equals(i)) return root.right;
+		 * if(root.right!=null && root.right.data.equals(i)) return root.left;
+		 */
+		Node left = getSibling(root.left, i);
+		Node right = getSibling(root.right, i);
+
+		
+		if (left != null && left.data.equals(i))
 			return root.right;
-		if(root.right!=null && root.right.data.equals(i))
+		if (right != null && right.data.equals(i))
 			return root.left;
-		Node left=getSibling(root.left,i);
-		Node right=getSibling(root.right,i);
-		
-		return (left==null)?right:left;
-		
+
+		return (left != null) ? left : right;
+
 	}
-	
-	
 
 }
